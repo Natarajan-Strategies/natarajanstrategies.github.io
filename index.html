@@ -16,12 +16,13 @@
       --brand-blue: #117BBF;
       --brand-red: #BD0223;
       --brand-lightblue: #33CAFF;
-      
+
       --bg-dark: #02040a;
       --bg-card: #0d1422;
       --text-main: #e5e7eb;
       --text-muted: #9ca3af;
       --max-width: 1040px;
+      --nav-height: 72px; /* height of sticky nav for scroll offset */
     }
 
     * {
@@ -30,12 +31,24 @@
       padding: 0;
     }
 
+    /* smooth scroll + offset so section titles aren't hidden behind nav */
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: var(--nav-height);
+    }
+
     body {
       font-family: "Inter", sans-serif;
       background: radial-gradient(circle at top left, #111827 0, #020617 40%, #000 100%);
       color: var(--text-main);
       -webkit-font-smoothing: antialiased;
       padding-bottom: 40px;
+    }
+
+    /* ensure sections account for sticky nav when scrolled into view */
+    .hero,
+    .section {
+      scroll-margin-top: var(--nav-height);
     }
 
     /* NAVIGATION */
