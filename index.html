@@ -55,6 +55,7 @@
     .nav {
       position: sticky;
       top: 0;
+      -webkit-backdrop-filter: blur(16px);
       backdrop-filter: blur(16px);
       background: rgba(10, 15, 25, 0.82);
       border-bottom: 1px solid rgba(255,255,255,0.1);
@@ -144,6 +145,7 @@
     .hero-gradient {
       background: linear-gradient(to right, var(--brand-blue), var(--brand-red));
       -webkit-background-clip: text;
+      background-clip: text;
       color: transparent;
     }
 
@@ -244,6 +246,24 @@
       color: var(--text-muted);
       font-size: 13px;
     }
+
+    .text-content {
+      max-width: 760px;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    .engagement-intro {
+      max-width: 860px;
+      line-height: 1.7;
+      color: var(--text-muted);
+      margin-bottom: 32px;
+    }
+
+    .contact-link {
+      color: var(--brand-lightblue);
+      font-weight: 600;
+    }
   </style>
 </head>
 
@@ -342,7 +362,7 @@
 <!-- ABOUT -->
 <section id="about" class="section">
   <h2 class="section-title">About</h2>
-  <p style="max-width: 760px; color: var(--text-muted); line-height: 1.7;">
+  <p class="text-content">
     Natarajan Strategies is a boutique advisory founded in Budapest and
     serving clients worldwide. We operate at the intersection of technology,
     product, and business strategy, helping organizations remove complexity,
@@ -354,7 +374,7 @@
 <section id="engagement" class="section">
   <h2 class="section-title">Engagement Model</h2>
 
-  <div style="max-width: 860px; line-height: 1.7; color: var(--text-muted); margin-bottom: 32px;">
+  <div class="engagement-intro">
     Clear, outcome-aligned engagement structures designed to move fast, reduce uncertainty, and deliver measurable results.
   </div>
 
@@ -415,9 +435,8 @@
 <!-- CONTACT -->
 <section id="contact" class="section">
   <h2 class="section-title">Contact</h2>
-  <p style="color: var(--text-muted); line-height: 1.7;">
-    Email: <a style="color: var(--brand-lightblue); font-weight: 600;"
-    href="mailto:info@natarajanstrategies.com">info@natarajanstrategies.com</a><br>
+  <p class="text-content">
+    Email: <a class="contact-link" href="mailto:info@natarajanstrategies.com">info@natarajanstrategies.com</a><br>
     Budapest, Hungary • Serving clients globally
   </p>
 </section>
