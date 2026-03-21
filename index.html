@@ -7,498 +7,234 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Natarajan Strategies is a global AI, digital transformation, and education consulting firm enabling organizations and learners to turn ambition into meaningful outcomes.">
 
-  <!-- Inter font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <style>
-    :root {
-      --brand-blue: #117BBF;
-      --brand-red: #9E3644;
-      --brand-lightblue: #33CAFF;
-
-      --bg-dark: #02040a;
-      --bg-card: #0d1422;
-      --text-main: #e5e7eb;
-      --text-muted: #9ca3af;
-      --max-width: 1170px;
-      --nav-height: 72px; /* height of sticky nav for scroll offset */
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    /* smooth scroll + offset so section titles aren't hidden behind nav */
-    html {
-      scroll-behavior: smooth;
-      scroll-padding-top: var(--nav-height);
-    }
-
-    body {
-      font-family: "Inter", sans-serif;
-      background: radial-gradient(circle at top left, #111827 0, #020617 40%, #000 100%);
-      color: var(--text-main);
-      -webkit-font-smoothing: antialiased;
-      padding-bottom: 40px;
-    }
-
-    /* ensure sections account for sticky nav when scrolled into view */
-    .hero,
-    .section {
-      scroll-margin-top: var(--nav-height);
-    }
-
-    /* NAVIGATION */
-    .nav {
-      position: sticky;
-      top: 0;
-      -webkit-backdrop-filter: blur(16px);
-      backdrop-filter: blur(16px);
-      background: rgba(10, 15, 25, 0.82);
-      border-bottom: 1px solid rgba(255,255,255,0.1);
-      z-index: 10;
-    }
-
-    .nav-inner {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 16px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .nav-brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .nav-brand img {
-      width: 40px;
-      height: 40px;
-    }
-
-    .brand-text {
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      font-size: 19px;
-      font-weight: 600;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 20px;
-      font-size: 14px;
-    }
-
-    .nav-links a {
-      color: var(--text-muted);
-      text-decoration: none;
-      position: relative;
-    }
-
-    .nav-links a:hover {
-      color: var(--text-main);
-    }
-
-    /* HERO */
-    .hero {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 80px 20px 40px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 40px;
-      align-items: center;
-    }
-
-    @media (max-width: 900px) {
-      .hero {
-        grid-template-columns: 1fr;
-        text-align: center;
-      }
-    }
-
-    .hero-logo {
-      width: 180px;
-      margin-bottom: 20px;
-    }
-
-    .eyebrow {
-      color: white;
-      text-transform: uppercase;
-      letter-spacing: 0.2em;
-      font-size: 12px;
-      margin-bottom: 16px;
-    }
-
-    h1 {
-      font-size: clamp(28px, 4vw, 44px);
-      font-weight: 600;
-      margin-bottom: 12px;
-      line-height: 1.1;
-    }
-
-    .hero-gradient {
-      background: linear-gradient(to right, var(--brand-blue), var(--brand-red));
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-
-    .hero-subtitle {
-      color: var(--text-muted);
-      font-size: 16px;
-      margin-bottom: 26px;
-      max-width: 460px;
-      line-height: 1.6;
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      justify-content: flex-start;
-    }
-
-    @media (max-width: 900px) {
-      .hero-actions { justify-content: center; }
-    }
-
-    .btn {
-      padding: 10px 20px;
-      border-radius: 999px;
-      font-size: 14px;
-      font-weight: 500;
-      cursor: pointer;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-    }
-
-    .btn-primary {
-      background: var(--brand-blue);
-      color: white;
-    }
-
-    .btn-primary:hover {
-      background: #0e3456;
-    }
-
-    .btn-outline {
-      border: 1px solid var(--text-muted);
-      color: var(--text-main);
-    }
-
-    .btn-outline:hover {
-      background: rgba(255,255,255,0.08);
-    }
-
-    /* SECTION STYLES */
-    .section {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 50px 20px;
-      border-top: 1px solid rgba(255,255,255,0.06);
-    }
-
-    .section-title {
-      font-size: 24px;
-      margin-bottom: 18px;
-      color: var(--brand-blue);
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-    }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 24px;
-    }
-
-    .service-card {
-      background: var(--bg-card);
-      padding: 20px;
-      border-radius: 14px;
-      border: 1px solid rgba(255,255,255,0.1);
-      box-shadow: 0 12px 28px rgba(0,0,0,0.25);
-    }
-
-    .service-card h3 {
-      margin-bottom: 10px;
-      font-size: 18px;
-      color: var(--brand-red);
-    }
-
-    .service-card p {
-      color: var(--text-muted);
-      line-height: 1.6;
-    }
-
-    /* CONTACT */
-    footer {
-      max-width: var(--max-width);
-      margin: 40px auto;
-      text-align: center;
-      color: var(--text-muted);
-      font-size: 13px;
-    }
-
-    .text-content {
-      max-width: 760px;
-      color: var(--text-muted);
-      line-height: 1.7;
-    }
-
-    .engagement-intro {
-      max-width: 860px;
-      line-height: 1.7;
-      color: var(--text-muted);
-      margin-bottom: 32px;
-    }
-
-    .contact-link {
-      color: var(--brand-lightblue);
-      font-weight: 600;
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body id="top">
 
-<!-- NAV -->
-<div class="nav">
-  <div class="nav-inner">
-    <div class="nav-brand">
-      <img src="logo.png" alt="Natarajan Strategies Logo">
-      <div class="brand-text">Natarajan Strategies</div>
+  <div class="nav">
+    <div class="nav-inner">
+      <div class="nav-brand">
+        <img src="logo.png" alt="Natarajan Strategies Logo">
+        <div class="brand-text">Natarajan Strategies</div>
+      </div>
+      <nav class="nav-links">
+        <a href="#top">Home</a>
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#engagement">Engagement</a>
+        <a href="#cases">Case Snapshots</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </div>
-    <nav class="nav-links">
-      <a href="#top">Home</a>
-      <a href="#services">Services</a>
-      <a href="#about">About</a>
-      <a href="#engagement">Engagement</a>
-      <a href="#cases">Case Snapshots</a>
-      <a href="#contact">Contact</a>
-    </nav>
   </div>
-</div>
 
-<!-- HERO -->
-<section class="hero">
-  <div>
-    <div class="eyebrow">AI Strategy • Digital Transformation • Global Education</div>
-    <img src="logo.png" alt="Natarajan Strategies Logo" class="hero-logo">
+  <section class="hero">
+    <div>
+      <div class="eyebrow">AI Strategy • Digital Transformation • Global Education</div>
+      <img src="logo.png" alt="Natarajan Strategies Logo" class="hero-logo">
 
-    <h1>
-      Strategy That Aligns<br>
-      <span class="hero-gradient">Execution That Delivers</span>
-    </h1>
+      <h1>
+        Strategy That Aligns<br>
+        <span class="hero-gradient">Execution That Delivers</span>
+      </h1>
 
-    <p class="hero-subtitle">
-      We help organizations and learners turn ambition into measurable outcomes through 
-      AI strategy, digital transformation, and global education solutions.
+      <p class="hero-subtitle">
+        We help organizations and learners turn ambition into measurable outcomes through
+        AI strategy, digital transformation, and global education solutions.
+      </p>
+
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="mailto:info@natarajanstrategies.com">
+          Schedule a Conversation →
+        </a>
+        <a class="btn btn-outline" href="#services">
+          Explore Services
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" class="section">
+    <h2 class="section-title">Services</h2>
+    <div class="services-grid">
+
+      <div class="service-card">
+        <h3>AI Strategy & Transformation</h3>
+        <p>Turning AI from experimentation into real value with roadmaps,
+           portfolio governance, and scalable implementation patterns.</p>
+      </div>
+
+      <div class="service-card">
+        <h3>Digital & Tech Modernization</h3>
+        <p>Architecture simplification, platform strategy, and modernization
+           waves that balance cost, risk, and delivery speed.</p>
+      </div>
+
+      <div class="service-card">
+        <h3>Executive Advisory</h3>
+        <p>A trusted partner to technology and business leaders navigating
+           strategic, organizational, and AI-driven change.</p>
+      </div>
+
+      <div class="service-card">
+        <h3>Product & Innovation Design</h3>
+        <p>Shaping AI-native products from concept through experimentation
+           and MVP delivery.</p>
+      </div>
+
+      <div class="service-card">
+        <h3>Educational Consulting</h3>
+        <p>
+          Strategic guidance for students navigating academic pathways,
+          admissions preparation, and building competitive academic profiles.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <h3>Global Online Education</h3>
+        <p>
+          AI-powered learning platform combining live and on-demand instructions, tailored to
+          help students achieve educational and career ambitions.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="about" class="section">
+    <h2 class="section-title">About</h2>
+    <p class="text-content">
+      Natarajan Strategies is an AI and digital transformation company headquartered
+      in Budapest and serving clients globally. We operate at the intersection of
+      technology, data, product, and business strategy, helping organizations reduce
+      complexity, accelerate execution, and deliver measurable impact.
+
+      In addition, we provide Educational Consulting service and a comprehensive
+      AI-powered learning platforms that is focused solely on students.
+    </p>
+  </section>
+
+  <section id="engagement" class="section">
+    <h2 class="section-title">Engagement Model</h2>
+
+    <div class="engagement-intro">
+      Clear, outcome-aligned engagement structures designed to move fast, reduce uncertainty, and deliver measurable results.
+    </div>
+
+    <div class="services-grid">
+
+      <div class="service-card">
+        <h3>01. Discovery & Alignment</h3>
+        <p>A rapid assessment focused on understanding business goals, identifying constraints, and defining the strategic opportunity, typically within 2–4 weeks.</p>
+      </div>
+
+      <div class="service-card">
+        <h3>02. Strategy & Roadmap</h3>
+        <p>We co-create a pragmatic transformation blueprint covering architecture, data, AI opportunities, operating model, and investment priorities.</p>
+      </div>
+
+      <div class="service-card">
+        <h3>03. Pilot, Accelerate & Scale</h3>
+        <p>Targeted initiatives deliver early value fast, building momentum, proving feasibility, and establishing reusable patterns for scale.</p>
+      </div>
+
+      <div class="service-card">
+        <h3>04. Leadership Advisory</h3>
+        <p>Ongoing partnership with executives and teams to guide decision-making, mitigate risks, and ensure delivery aligns to strategy and value.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="cases" class="section">
+    <h2 class="section-title">Case Snapshots</h2>
+
+    <p class="cases-intro">
+      A selection of representative engagements mapped directly to our service offerings.
+      Details are intentionally generalized to respect client confidentiality.
     </p>
 
-    <div class="hero-actions">
-      <a class="btn btn-primary" href="mailto:info@natarajanstrategies.com">
-        Schedule a Conversation →
-      </a>
-      <a class="btn btn-outline" href="#services">
-        Explore Services
-      </a>
+    <div class="services-grid">
+
+      <div class="service-card">
+        <h3>AI Strategy & Transformation · Global CPG</h3>
+        <p>
+          Designed a multi-year AI strategy and execution roadmap for a Fortune 500 CPG
+          organization, enabling decision automation, predictive supply planning, and
+          scalable AI governance.
+          <br><br>
+          <strong>Impact:</strong> Clear investment priorities, reusable delivery patterns,
+          and accelerated time-to-value across key use cases.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <h3>Digital & Tech Modernization · Platform Simplification</h3>
+        <p>
+          Delivered a modernization strategy for a multinational enterprise, rationalizing
+          the application landscape, streamlining integrations, and improving cloud readiness.
+          <br><br>
+          <strong>Impact:</strong> Reduced platform complexity, improved resilience,
+          and created a phased migration plan aligned to risk and cost.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <h3>Executive Advisory · Transformation Governance</h3>
+        <p>
+          Partnered with senior leadership to drive clarity across a multi-workstream program:
+          operating model, decision cadence, risk management, and stakeholder alignment.
+          <br><br>
+          <strong>Impact:</strong> Faster decisions, fewer delivery bottlenecks,
+          and stronger accountability across teams.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <h3>Product & Innovation Design · AI-Enabled MVP Acceleration</h3>
+        <p>
+          Guided a portfolio of AI-enabled product experiments from concept through MVP,
+          including user journey design, prototyping, and technical feasibility validation.
+          <br><br>
+          <strong>Impact:</strong> Shorter innovation cycles and clearer go/no-go signals
+          before larger investment.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <h3>Education Consulting · Academic Pathways</h3>
+        <p>
+          Advised students and families on academic pathways, program selection
+          across countries, including application planning and timeline strategy.
+          <br><br>
+          <strong>Impact:</strong> Stronger fit-to-program decisions and improved readiness
+          for competitive admissions environments.
+        </p>
+      </div>
+
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- SERVICES -->
-<section id="services" class="section">
-  <h2 class="section-title">Services</h2>
-  <div class="services-grid">
+  <section id="contact" class="section">
+    <h2 class="section-title">Contact</h2>
+    <p class="text-content">
+      Email: <a class="contact-link" href="mailto:info@natarajanstrategies.com">info@natarajanstrategies.com</a><br>
+      Budapest, Hungary • Serving Clients Globally
+    </p>
+  </section>
 
-    <div class="service-card">
-      <h3>AI Strategy & Transformation</h3>
-      <p>Turning AI from experimentation into real value with roadmaps,
-         portfolio governance, and scalable implementation patterns.</p>
-    </div>
+  <footer>
+    © <span id="year"></span> Natarajan Strategies • All Rights Reserved
+  </footer>
 
-    <div class="service-card">
-      <h3>Digital & Tech Modernization</h3>
-      <p>Architecture simplification, platform strategy, and modernization
-         waves that balance cost, risk, and delivery speed.</p>
-    </div>
-
-    <div class="service-card">
-      <h3>Executive Advisory</h3>
-      <p>A trusted partner to technology and business leaders navigating
-         strategic, organizational, and AI-driven change.</p>
-    </div>
-    
-    <div class="service-card">
-      <h3>Product & Innovation Design</h3>
-      <p>Shaping AI-native products from concept through experimentation
-         and MVP delivery.</p>
-    </div>
-
-    <div class="service-card">
-      <h3>Educational Consulting</h3>
-      <p>
-        Strategic guidance for students navigating academic pathways,
-        admissions preparation, and building competitive academic profiles.
-      </p>
-    </div>
-    
-    <div class="service-card">
-      <h3>Global Online Education</h3>
-      <p>
-        AI-powered learning platform combining live and on-demand instructions, tailored to
-        help students achieve educational and career ambitions.
-      </p>
-    </div>
-
-  </div>
-</section>
-
-<!-- ABOUT -->
-<section id="about" class="section">
-  <h2 class="section-title">About</h2>
-  <p class="text-content">
-    Natarajan Strategies is an AI and digital transformation company headquartered 
-    in Budapest and serving clients globally. We operate at the intersection of 
-    technology, data, product, and business strategy, helping organizations reduce 
-    complexity, accelerate execution, and deliver measurable impact.
-
-    In addition, we provide Educational Consulting service and a comprehensive
-    AI-powered learning platforms that is focused solely on students.
-  </p>
-</section>
-  
-<!-- ENGAGEMENT MODEL -->
-<section id="engagement" class="section">
-  <h2 class="section-title">Engagement Model</h2>
-
-  <div class="engagement-intro">
-    Clear, outcome-aligned engagement structures designed to move fast, reduce uncertainty, and deliver measurable results.
-  </div>
-
-  <div class="services-grid">
-
-    <div class="service-card">
-      <h3>01. Discovery & Alignment</h3>
-      <p>A rapid assessment focused on understanding business goals, identifying constraints, and defining the strategic opportunity, typically within 2–4 weeks.</p>
-    </div>
-
-    <div class="service-card">
-      <h3>02. Strategy & Roadmap</h3>
-      <p>We co-create a pragmatic transformation blueprint covering architecture, data, AI opportunities, operating model, and investment priorities.</p>
-    </div>
-
-    <div class="service-card">
-      <h3>03. Pilot, Accelerate & Scale</h3>
-      <p>Targeted initiatives deliver early value fast, building momentum, proving feasibility, and establishing reusable patterns for scale.</p>
-    </div>
-
-    <div class="service-card">
-      <h3>04. Leadership Advisory</h3>
-      <p>Ongoing partnership with executives and teams to guide decision-making, mitigate risks, and ensure delivery aligns to strategy and value.</p>
-    </div>
-
-  </div>
-</section>
-
-<!-- CASE SNAPSHOTS -->
-<section id="cases" class="section">
-  <h2 class="section-title">Case Snapshots</h2>
-
-  <p style="max-width: 820px; color: var(--text-muted); line-height: 1.7; margin-bottom: 36px;">
-    A selection of representative engagements mapped directly to our service offerings.
-    Details are intentionally generalized to respect client confidentiality.
-  </p>
-
-  <div class="services-grid">
-
-    <div class="service-card">
-      <h3>AI Strategy & Transformation · Global CPG</h3>
-      <p>
-        Designed a multi-year AI strategy and execution roadmap for a Fortune 500 CPG
-        organization, enabling decision automation, predictive supply planning, and
-        scalable AI governance.
-        <br><br>
-        <strong>Impact:</strong> Clear investment priorities, reusable delivery patterns,
-        and accelerated time-to-value across key use cases.
-      </p>
-    </div>
-
-    <div class="service-card">
-      <h3>Digital & Tech Modernization · Platform Simplification</h3>
-      <p>
-        Delivered a modernization strategy for a multinational enterprise, rationalizing
-        the application landscape, streamlining integrations, and improving cloud readiness.
-        <br><br>
-        <strong>Impact:</strong> Reduced platform complexity, improved resilience,
-        and created a phased migration plan aligned to risk and cost.
-      </p>
-    </div>
-
-    <div class="service-card">
-      <h3>Executive Advisory · Transformation Governance</h3>
-      <p>
-        Partnered with senior leadership to drive clarity across a multi-workstream program:
-        operating model, decision cadence, risk management, and stakeholder alignment.
-        <br><br>
-        <strong>Impact:</strong> Faster decisions, fewer delivery bottlenecks,
-        and stronger accountability across teams.
-      </p>
-    </div>
-
-    <div class="service-card">
-      <h3>Product & Innovation Design · AI-Enabled MVP Acceleration</h3>
-      <p>
-        Guided a portfolio of AI-enabled product experiments from concept through MVP,
-        including user journey design, prototyping, and technical feasibility validation.
-        <br><br>
-        <strong>Impact:</strong> Shorter innovation cycles and clearer go/no-go signals
-        before larger investment.
-      </p>
-    </div>
-
-    <div class="service-card">
-      <h3>Education Consulting · Academic Pathways</h3>
-      <p>
-        Advised students and families on academic pathways, program selection 
-        across countries, including application planning and timeline strategy.
-        
-        <br><br>
-        <strong>Impact:</strong> Stronger fit-to-program decisions and improved readiness
-        for competitive admissions environments.
-      </p>
-    </div>
-
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact" class="section">
-  <h2 class="section-title">Contact</h2>
-  <p class="text-content">
-    Email: <a class="contact-link" href="mailto:info@natarajanstrategies.com">info@natarajanstrategies.com</a><br>
-    Budapest, Hungary • Serving Clients Globally
-  </p>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  © <span id="year"></span> Natarajan Strategies • All Rights Reserved
-</footer>
-
-<script>
-  document.getElementById("year").textContent = new Date().getFullYear();
-</script>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 
 </body>
 </html>
